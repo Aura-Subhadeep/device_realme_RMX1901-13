@@ -133,6 +133,11 @@ Return<void> Sensors::getSensorsList(getSensorsList_cb _hidl_cb) {
             mSensorHandleProximity = dst->sensorHandle;
             dst->typeAsString = "";
         }
+
+      if (dst->typeAsString == "qti.sensor.wise_light") {
+            dst->type = SensorType::LIGHT;
+            dst->typeAsString = "";
+        }
     }
 
     _hidl_cb(out);
