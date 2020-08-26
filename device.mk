@@ -418,7 +418,7 @@ PRODUCT_BOOT_JARS += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.RMX1901
+    vendor.lineage.touch@1.0-service.realme_sdm710
 
 # Thermal
 PRODUCT_PACKAGES += \

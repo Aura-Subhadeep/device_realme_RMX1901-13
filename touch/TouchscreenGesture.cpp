@@ -16,9 +16,35 @@
 
 #define LOG_TAG "TouchscreenGestureService"
 
-#include "TouchscreenGesture.h"
+#include <unordered_map>
+
+#include <android-base/file.h>
 #include <android-base/logging.h>
 #include <fstream>
+#include "TouchscreenGesture.h"
+
+namespace {
+typedef struct {
+    int32_t keycode;
+    const char* name;
+} GestureInfo;
+
+// id -> info
+const std::unordered_map<int32_t, GestureInfo> kGestureInfoMap = {
+    {0, {246, "Gesture W"}},
+    {1, {247, "Gesture M"}},
+    {2, {249, "Gesture Circle"}},
+    {3, {250, "Gesture Two Swipe"}},
+    {4, {252, "Gesture Up Arrow"}},
+    {5, {251, "Gesture Down Arrow"}},
+    {6, {254, "Gesture Left Arrow"}},
+    {7, {253, "Gesture Right Arrow"}},
+    {8, {256, "Gesture Swipe Up"}},
+    {9, {255, "Gesture Swipe Down"}},
+    {10, {258, "Gesture Swipe Left"}},
+    {11, {257, "Gesture Swipe Right"}},
+};
+}  // anonymous namespace
 
 namespace vendor {
 namespace lineage {
@@ -26,20 +52,8 @@ namespace touch {
 namespace V1_0 {
 namespace implementation {
 
-const std::map<int32_t, TouchscreenGesture::GestureInfo> TouchscreenGesture::kGestureInfoMap = {
-    {0, {251, "Two fingers down swipe", "/proc/touchpanel/double_swipe_enable"}},
-    {1, {255, "Up arrow", "/proc/touchpanel/up_arrow_enable"}},
-    {2, {253, "Right arrow", "/proc/touchpanel/right_arrow_enable"}},
-    {3, {252, "Down arrow", "/proc/touchpanel/down_arrow_enable"}},
-    {4, {254, "Left arrow", "/proc/touchpanel/left_arrow_enable"}},
-    {5, {64, "One finger up swipe", "/proc/touchpanel/up_swipe_enable"}},
-    {6, {63, "One finger right swipe", "/proc/touchpanel/right_swipe_enable"}},
-    {7, {66, "One finger down swipe", "/proc/touchpanel/down_swipe_enable"}},
-    {8, {65, "One finger left swipe", "/proc/touchpanel/left_swipe_enable"}},
-    {9, {247, "Letter M", "/proc/touchpanel/letter_m_enable"}},
-    {10, {250, "Letter O", "/proc/touchpanel/letter_o_enable"}},
-    {11, {246, "Letter W", "/proc/touchpanel/letter_w_enable"}},
-};
+static constexpr const char* kGestureNodePath =
+    "/proc/touchpanel/gesture_enable";
 
 Return<void> TouchscreenGesture::getSupportedGestures(getSupportedGestures_cb resultCb) {
     std::vector<Gesture> gestures;
@@ -59,9 +73,9 @@ Return<bool> TouchscreenGesture::setGestureEnabled(
         return false;
     }
 
-    std::ofstream file(entry->second.path);
+    std::ofstream file(kGestureNodePath);
     file << (enabled ? "1" : "0");
-    LOG(DEBUG) << "Wrote file " << entry->second.path << " fail " << file.fail();
+    LOG(DEBUG) << "Wrote file " << kGestureNodePath << " fail " << file.fail();
     return !file.fail();
 }
 

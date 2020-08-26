@@ -14,19 +14,18 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.touch@1.0-service.RMX1901",
-    init_rc: ["vendor.lineage.touch@1.0-service.RMX1901.rc"],
-    vintf_fragments: ["vendor.lineage.touch@1.0-service.RMX1901.xml"],
+    name: "vendor.lineage.touch@1.0-service.realme_sdm710",
+    init_rc: ["vendor.lineage.touch@1.0-service.realme_sdm710.rc"],
     defaults: ["hidl_defaults"],
-    proprietary: true,
+    vintf_fragments: ["vendor.lineage.touch@1.0-service.realme_sdm710.xml"],
     relative_install_path: "hw",
+    vendor: true,
     srcs: [
         "TouchscreenGesture.cpp",
         "service.cpp",
     ],
     shared_libs: [
         "libbase",
-        "libbinder",
         "libhidlbase",
         "libutils",
         "vendor.lineage.touch@1.0",
