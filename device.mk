@@ -16,7 +16,7 @@ $(call inherit-product-if-exists, vendor/realme/RMX1901/RMX1901-vendor.mk)
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 29
-PRODUCT_EXTRA_VNDK_VERSIONS := 29
+PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
 
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
