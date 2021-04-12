@@ -15,7 +15,7 @@
 
 # Biometrics
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.realme_sdm710           u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.oppo\.hardware\.biometrics\.fingerprint@2\.1-service              u:object_r:hal_fingerprint_default_exec:s0       
+/(vendor|system/vendor)/bin/hw/vendor\.oppo\.hardware\.biometrics\.fingerprint@2\.1-service              u:object_r:hal_fingerprint_default_exec:s0
 
 # Light Hal
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.realme_sdm710                      u:object_r:hal_light_default_exec:s0
@@ -84,3 +84,6 @@
 
 # I/O
 /sys/devices(/platform)?/soc/[a-f0-9]+.sdhci/mmc_host/mmc[0-9]/mmc[0-9]:[a-f0-9]+/block/mmcblk[0-9]/queue/read_ahead_kb u:object_r:sysfs_mmc_host:s0
+
+# Sys files
+/sys/devices/platform/vendor/vendor:motor_pl(/.*)?                 u:object_r:sysfs_motor:s0
