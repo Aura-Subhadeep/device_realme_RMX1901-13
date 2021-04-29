@@ -96,7 +96,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
-   persist.camera.HAL3.enabled=1
+   persist.camera.HAL3.enabled=1 \
+   log.tag.CHIUSECASE=ERROR \
+   persist.vendor.camera.logInfoMask=false
 
 # CNE
 PRODUCT_PRODUCT_PROPERTIES += \
