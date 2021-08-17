@@ -71,16 +71,6 @@ public class RealmeParts extends PreferenceFragment implements
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.RealmeParts, rootKey);
-
-        mGesturesPref = findPreference("screen_gestures");
-        mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                Intent intent = new Intent(getContext(), TouchGesturesActivity.class);
-                startActivity(intent);
-                return true;
-            }
-        });
         mDozePref = findPreference("doze");
         mDozePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override

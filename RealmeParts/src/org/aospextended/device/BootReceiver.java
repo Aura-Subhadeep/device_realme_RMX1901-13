@@ -36,14 +36,6 @@ public class BootReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            enableComponent(context, TouchGestures.class.getName());
-            SharedPreferences prefs = Utils.getSharedPreferences(context);
-            TouchGestures.enableGestures(prefs.getBoolean(
-                TouchGestures.PREF_GESTURE_ENABLE, true));
-            TouchGestures.enableDt2w(prefs.getBoolean(
-                TouchGestures.PREF_DT2W_ENABLE, true));
-        }
         DozeUtils.checkDozeService(context);
         VibratorStrengthPreference.restore(context);
     }

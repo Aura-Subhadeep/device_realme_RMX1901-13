@@ -144,10 +144,6 @@ public class TouchGestures extends PreferenceFragment implements
 
         mEnableGestures = (SwitchPreference) prefs.findPreference(PREF_GESTURE_ENABLE);
 
-        mHapticFeedback = (SwitchPreference) findPreference(KEY_GESTURE_HAPTIC_FEEDBACK);
-        mHapticFeedback.setChecked(mPrefs.getInt(Utils.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0);
-        mHapticFeedback.setOnPreferenceChangeListener(this);
-
         mGestureDoubleTap = (Preference) prefs.findPreference(PREF_GESTURE_DOUBLE_TAP);
         mGestureW = (Preference) prefs.findPreference(PREF_GESTURE_W);
         mGestureM = (Preference) prefs.findPreference(PREF_GESTURE_M);
@@ -193,11 +189,6 @@ public class TouchGestures extends PreferenceFragment implements
                 mPrefs.getBoolean(PREF_DT2W_ENABLE, true);
         mEnableDt2w.setChecked(enableDt2w);
         mEnableDt2w.setOnPreferenceChangeListener(this);
-
-        boolean enableGestures =
-                mPrefs.getBoolean(PREF_GESTURE_ENABLE, true);
-        mEnableGestures.setChecked(enableGestures);
-        mEnableGestures.setOnPreferenceChangeListener(this);
 
         return prefs;
     }
@@ -290,11 +281,6 @@ public class TouchGestures extends PreferenceFragment implements
             return true;
         }
         final String key = preference.getKey();
-        if (KEY_GESTURE_HAPTIC_FEEDBACK.equals(key)) {
-                final boolean value = (boolean) newValue;
-                mPrefs.edit().putInt(Utils.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, value ? 1 : 0).commit();
-                return true;
-        }
         return false;
     }
 
