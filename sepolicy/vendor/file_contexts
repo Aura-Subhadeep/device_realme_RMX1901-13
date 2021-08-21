@@ -17,6 +17,12 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.realme_sdm710           u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.oppo\.hardware\.biometrics\.fingerprint@2\.1-service              u:object_r:hal_fingerprint_default_exec:s0
 
+# Composer
+/(system)/lib(64)?/android\.hardware\.graphics\.composer[0-9]+\.[0-9]+\.so    u:object_r:same_process_hal_file:s0
+
+# Hexagon DSP-side executable needed for Halide operation. This is labeled as public_adsprpcd_file as it needs to be read by apps(e.g. Google Camera App)
+/(vendor|system/vendor)/dsp/cdsp/fastrpc_shell_3                                               u:object_r:public_adsprpcd_file:s0
+
 # Light Hal
 /vendor/bin/hw/android\.hardware\.lights-service\.realme_sdm710        u:object_r:hal_light_default_exec:s0
 /sys/class/lcd_bias/secure_mode                                                u:object_r:sysfs_lcd_file:s0
