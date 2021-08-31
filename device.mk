@@ -373,7 +373,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc \
     init.oppo.vendor.motor.rc \
-    apex_metadata.rc
+    apex_metadata.rc \
+    init.RealmeParts.rc
 
 # Recovery
 PRODUCT_PACKAGES += \

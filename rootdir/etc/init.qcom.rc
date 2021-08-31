@@ -35,6 +35,7 @@ import /vendor/etc/init/hw/init.qcom.test.rc
 import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.qcom.factory.rc
 import /vendor/etc/init/hw/init.oppo.vendor.motor.rc
+import /vendor/etc/init/hw/init.RealmeParts.rc
 #ifdef VENDOR_EDIT
 
 

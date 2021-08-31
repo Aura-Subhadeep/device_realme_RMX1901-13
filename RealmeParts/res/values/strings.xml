@@ -28,7 +28,7 @@
     <string name="enable_gestures_summary">Enable screen off gestures</string>
     <string name="gestures_title">Gestures</string>
     <string name="gesture_double_tap_title">Gesture Double Tap</string>
-    <string name="gesture_w_title">Gesture W</string>	
+    <string name="gesture_w_title">Gesture W</string>
     <string name="gesture_m_title">Gesture M</string>
     <string name="gesture_s_title">Gesture S</string>
     <string name="gesture_circle_title">Gesture Circle</string>
@@ -175,4 +175,14 @@
     <string name="raise_to_wake_gesture_title">Raise to wake</string>
     <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
 
+    <!-- Performance Profiles -->
+    <string name="performance_profile_title">Performance</string>
+    <string name="performance_title">Performance Profiles</string>
+    <string name="performance_summary">Performance tuning</string>
+    <string name="performance_dialogTitle">Choose your performance profile</string>
+
+    <!-- Values for performance presets -->
+    <string name="performance_extreme">Extreme</string>
+    <string name="performance_battery">Battery</string>
+    <string name="performance_balance">Balanced</string>
 </resources>

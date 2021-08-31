@@ -68,6 +68,8 @@ public class RealmeParts extends PreferenceFragment implements
     private Preference mGesturesPref;
     private VibratorStrengthPreference mVibratorStrength;
 
+    public static final String KEY_PERFORMANCE = "perf_tuner";
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.RealmeParts, rootKey);

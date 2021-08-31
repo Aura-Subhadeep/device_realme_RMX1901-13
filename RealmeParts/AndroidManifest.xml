@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CAMERA" />
-	
+
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
     <uses-sdk
@@ -51,7 +51,7 @@
             <meta-data
                 android:name="com.android.settings.bg.hint"
                 android:resource="@color/icon_bg_color"  />
-            <meta-data 
+            <meta-data
                 android:name="com.android.settings.bg.argb"
                 android:value="@color/icon_bg_color"/>
             <meta-data
@@ -78,6 +78,16 @@
 
         <service android:name=".doze.DozeService"
                  android:permission="RealmeDozeService">
+        </service>
+        <service
+            android:name="org.aospextended.device.PerfTileService"
+            android:icon="@drawable/ic_perf"
+            android:label="@string/performance_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
         </service>
 
         <activity
