@@ -1,1 +1,5 @@
 allow system_app vendor_wfd_service_prop:property_service {set};
+
+#Vibrator
+allow system_app sysfs_vibrator:file rw_file_perms;
+allow system_app sysfs_leds:dir r_dir_perms;
