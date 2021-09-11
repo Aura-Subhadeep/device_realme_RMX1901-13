@@ -6,6 +6,7 @@
 
         <PreferenceScreen
                 android:key="doze"
+                android:icon="@drawable/ambient_mode_icon"
                 android:summary="@string/ambient_display_gestures_summary"
                 android:title="@string/ambient_display_gestures_title" />
 
@@ -17,5 +18,54 @@
         <org.aospextended.device.vibration.VibratorStrengthPreference
 	    android:key="vib_strength"
             android:icon="@drawable/ic_vibrate" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="graphics"
+        android:title="@string/display_title">
+
+        <SwitchPreference
+            android:key="dc"
+            android:icon="@drawable/dc_mode_icon"
+            android:summary="@string/dc_mode_summary"
+            android:title="@string/dc_mode_title" />
+
+        <SwitchPreference
+            android:key="hbm"
+            android:icon="@drawable/hbm_mode_icon"
+            android:summary="@string/hbm_mode_summary"
+            android:title="@string/hbm_mode_title"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="srgb"
+            android:icon="@drawable/srgb_mode_icon"
+            android:summary="@string/srgb_mode_summary"
+            android:title="@string/srgb_mode_title" />
+
+        <SwitchPreference
+            android:key="game"
+            android:icon="@drawable/game_mode_icon"
+            android:summary="@string/game_mode_summary"
+            android:title="@string/game_mode_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="misc"
+        android:title="@string/misc_title">
+
+        <SwitchPreference
+            android:key="otg"
+            android:icon="@drawable/usb_otg_icon"
+            android:summary="@string/otg_mode_summary"
+            android:title="@string/otg_mode_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="perf_desc"
+        android:title="@string/perf_desc_title">
+        <org.aospextended.device.widget.WallOfTextPreference
+            android:icon="@drawable/ic_info"
+            android:summary="@string/perf_mode_info" />
     </PreferenceCategory>
 </PreferenceScreen>

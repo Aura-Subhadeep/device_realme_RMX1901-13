@@ -70,8 +70,28 @@ public class RealmeParts extends PreferenceFragment implements
 
     public static final String KEY_PERFORMANCE = "perf_tuner";
 
+    private static final String KEY_CATEGORY_GRAPHICS = "graphics";
+    public static final String KEY_SRGB_SWITCH = "srgb";
+    public static final String KEY_HBM_SWITCH = "hbm";
+    public static final String KEY_DC_SWITCH = "dc";
+    public static final String KEY_OTG_SWITCH = "otg";
+    public static final String KEY_GAME_SWITCH = "game";
+
+    public static final String TP_LIMIT_ENABLE = "/proc/touchpanel/oppo_tp_limit_enable";
+    public static final String TP_DIRECTION = "/proc/touchpanel/oppo_tp_direction";
+
+    public static final String KEY_SETTINGS_PREFIX = "device_setting_";
+
+    private static TwoStatePreference mHBMModeSwitch;
+    private static TwoStatePreference mDCModeSwitch;
+    private static TwoStatePreference mSRGBModeSwitch;
+    private static TwoStatePreference mOTGModeSwitch;
+    private static TwoStatePreference mGameModeSwitch;
+
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getContext());
         setPreferencesFromResource(R.xml.RealmeParts, rootKey);
         mDozePref = findPreference("doze");
         mDozePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
@@ -85,6 +105,33 @@ public class RealmeParts extends PreferenceFragment implements
 
         mVibratorStrength = (VibratorStrengthPreference) findPreference(VibratorStrengthPreference.KEY_VIBSTRENGTH);
         mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+
+        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mDCModeSwitch = (TwoStatePreference) findPreference(KEY_DC_SWITCH);
+        mDCModeSwitch.setEnabled(DCModeSwitch.isSupported());
+        mDCModeSwitch.setChecked(DCModeSwitch.isCurrentlyEnabled(this.getContext()));
+        mDCModeSwitch.setOnPreferenceChangeListener(new DCModeSwitch());
+
+        mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
+        mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
+        mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this.getContext()));
+        mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
+
+        mSRGBModeSwitch = (TwoStatePreference) findPreference(KEY_SRGB_SWITCH);
+        mSRGBModeSwitch.setEnabled(SRGBModeSwitch.isSupported());
+        mSRGBModeSwitch.setChecked(SRGBModeSwitch.isCurrentlyEnabled(this.getContext()));
+        mSRGBModeSwitch.setOnPreferenceChangeListener(new SRGBModeSwitch());
+
+        mOTGModeSwitch = (TwoStatePreference) findPreference(KEY_OTG_SWITCH);
+        mOTGModeSwitch.setEnabled(OTGModeSwitch.isSupported());
+        mOTGModeSwitch.setChecked(OTGModeSwitch.isCurrentlyEnabled(this.getContext()));
+        mOTGModeSwitch.setOnPreferenceChangeListener(new OTGModeSwitch());
+
+        mGameModeSwitch = (TwoStatePreference) findPreference(KEY_GAME_SWITCH);
+        mGameModeSwitch.setEnabled(GameModeSwitch.isSupported());
+        mGameModeSwitch.setChecked(GameModeSwitch.isCurrentlyEnabled(this.getContext()));
+        mGameModeSwitch.setOnPreferenceChangeListener(new GameModeSwitch());
     }
 
     @Override

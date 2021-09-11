@@ -164,7 +164,6 @@ PRODUCT_PACKAGES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    devicesettings \
     RealmeProximityHelper \
     RealmeParts
 
@@ -358,7 +357,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.class_main.sh \
-    init.devicesetting.rc \
     init.oppo.reserve.rc \
     init.msm.usb.configfs.rc \
     init.oppo.fingerprints.sh \
