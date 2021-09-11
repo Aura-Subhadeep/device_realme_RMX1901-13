@@ -800,56 +800,56 @@ vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # Graphics (Adreno) - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so
-vendor/lib64/egl/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/libC2D2.so
-vendor/lib64/libCB.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libVkLayer_q3dtools.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libgpudataproducer.so
-vendor/lib64/libgsl.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libpvr.so
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/libC2D2.so
-vendor/lib/libCB.so
-vendor/lib/libOpenCL.so
-vendor/lib/libVkLayer_q3dtools.so
-vendor/lib/libadreno_utils.so
-vendor/lib/libc2d30_bltlib.so
-vendor/lib/libgpudataproducer.so
-vendor/lib/libgsl.so
-vendor/lib/libllvm-qcom.so
-vendor/lib/libllvm-glnext.so
-vendor/lib/libpvr.so
+vendor/lib64/egl/eglSubDriverAndroid.so|cd1cb25bfd16f15e0d7c6495493359838a1b6e96
+vendor/lib64/egl/libEGL_adreno.so|96a44c8e3c18c534eb1f333956541955e9f5bd7e
+vendor/lib64/egl/libGLESv1_CM_adreno.so|e2e8a079e680bf92f686fb79146651c158f6e130
+vendor/lib64/egl/libGLESv2_adreno.so|71ec912b47a1583e16ccefaab7785d9359f9bfd9
+vendor/lib64/egl/libq3dtools_adreno.so|d8c8f25332d218a2dbd7cc5052e384b59d07c5a1
+vendor/lib64/egl/libq3dtools_esx.so|9d34101700af3562c4aa6cfbfe17da414c8959f9
+vendor/lib64/libC2D2.so|6fb775e393ce7161b30e3a71fa0f320e86374425
+vendor/lib64/libCB.so|d19567c8e452abe91dd6f9d1ef70f7475164b92f
+vendor/lib64/libOpenCL.so|e8d33c6bd77d80818b7747acc806086901fe0828
+vendor/lib64/libVkLayer_q3dtools.so|7245772775f0c50fc9fc43fadef1da7b9dec65b0
+vendor/lib64/libadreno_utils.so|ff553b158bb8d028a901cde06146af0a0d8f3457
+vendor/lib64/libc2d30_bltlib.so|aa37c84cf6cc1e1ac670b433c97d0bf41308f9ca
+vendor/lib64/libgpudataproducer.so|660afeb918453413e0efd40ae3dad11e0ab2efb5
+vendor/lib64/libgsl.so|630302cffe48e0df53eb5ad45b579a9ae7c1f797
+vendor/lib64/libllvm-glnext.so|c7615c26a9b597c374dafe040e724b35e175dd22
+vendor/lib64/libllvm-qcom.so|dbb9d74ee9ce7fd9e8ead13bc114dd82939247de
+vendor/lib64/libpvr.so|ac4805ba7a7c78570a60340d01248d258046e456
+vendor/lib/egl/eglSubDriverAndroid.so|cc5acc02889131a29b624b4c19ab90b8273f393d
+vendor/lib/egl/libEGL_adreno.so|ae30bbf20dc911308407da99cb263e8de6b2eecb
+vendor/lib/egl/libGLESv1_CM_adreno.so|b94ba8188a14dd262abac1b8d667bce3319cf344
+vendor/lib/egl/libGLESv2_adreno.so|cd1a767ff0af9662a48b26cbf66efb3315ce40f5
+vendor/lib/egl/libq3dtools_adreno.so|fa4ad58fe986911110d70eb5e2705e0d5bc8a7dc
+vendor/lib/egl/libq3dtools_esx.so|cd4682e58a78b9503dc402637b9a9ce648f562ec
+vendor/lib/libC2D2.so|267be7bd6768fa3b9bed2b9a42062cb5a77ca59b
+vendor/lib/libCB.so|39bb5dee1a55c5dbccdad348097515ee9963e6ed
+vendor/lib/libOpenCL.so|a673b1809882a444bcc425e65ecab87ff21b081d
+vendor/lib/libVkLayer_q3dtools.so|63857df92527df9be588f8f2e67657c7a0e3d4fd
+vendor/lib/libadreno_utils.so|cf53b5902cd681685add56de8f72f2ae5f6921c9
+vendor/lib/libc2d30_bltlib.so|950c705e6dbc02b646a0129e66e94e192f5cd87f
+vendor/lib/libgpudataproducer.so|34e7ea801217f16775c916df870659f0880a5698
+vendor/lib/libgsl.so|ba2889a0eb5dc73b8d2618672fbd24847cf55f06
+vendor/lib/libllvm-qcom.so|70e69c93f3b88455b3bc6d36b7dc8cb522952072
+vendor/lib/libllvm-glnext.so|5ede80ce481c6a1e2baad5d261214d281aef0368
+vendor/lib/libpvr.so|9d7e50e1deb16ef03e05141e1babcc49160f840c
 
 # Graphics (Adreno firmware) - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
-vendor/firmware/a612_rgmu.bin
-vendor/firmware/a615_zap.elf
-vendor/firmware/a615_zap.mdt
-vendor/firmware/a615_zap.b02
-vendor/firmware/a615_zap.b01
-vendor/firmware/a615_zap.b00
-vendor/firmware/a618_gmu.bin
-vendor/firmware/a630_gmu.bin
-vendor/firmware/a630_sqe.fw
-vendor/firmware/a640_gmu.bin
+vendor/firmware/a612_rgmu.bin|cb8705d5bc417e53863ed16ab0bed2fc1489646f
+vendor/firmware/a615_zap.elf|9d44d609bcf0253d03eb7e55d5ac85150d62a632
+vendor/firmware/a615_zap.mdt|312541e4bf301e4ce3386944319ff93ed7c7828d
+vendor/firmware/a615_zap.b02|4ae54047f9629f2470a5d58f3940c5eb51298b96
+vendor/firmware/a615_zap.b01|712650ab008c97bc71fbb62e3715914be97dcf02
+vendor/firmware/a615_zap.b00|f378b1e8c467fd07fa7c12e3a884ba9a3c226d73
+vendor/firmware/a618_gmu.bin|0c211ef8a3246d649a4ae52a926d128b61e3c264
+vendor/firmware/a630_gmu.bin|32bb4acc7767c47ddb487ed7cb998d465ee462f2
+vendor/firmware/a630_sqe.fw|e25094f97b44244775cc38a9d909fba6bd4cf76b
+vendor/firmware/a640_gmu.bin|fb1eab0dd5f313abf31441e2209c9398da7df98b
 
 # Graphics (Vulkan) - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
-vendor/lib64/hw/vulkan.adreno.so
-vendor/lib/hw/vulkan.adreno.so
+vendor/lib64/hw/vulkan.adreno.so|b609f79d6256f1ef7164facef16e5848f06b76c2
+vendor/lib/hw/vulkan.adreno.so|a92e75acd881b4c80e7cb157ed41cb599cdbcc03
 
 # IMS - from pnx_sprout -  PNX_00WW_FIH-user-11-RKQ1.200906.002-00WW_6_100-release-keys
 -system_ext/app/uceShimService/uceShimService.apk|644eec82ed9ecf1c1324241271ac5c9b5fe68f8b
@@ -938,13 +938,13 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|516268b5b3e044429f40b5101aa1f42563e
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|6302b61d7d1580254c091cce8ad5e121dbd73ace
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|25517caf74691b812320b46b477a3f4161cc1bcf
 
-# IO prefetcher - RUI2
-vendor/lib/libqti-iopd-client.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
+# IO prefetcher - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
+vendor/lib/libqti-iopd-client.so|dd4029d3ee0a1396431cb246c6af4fbcabd01802
+vendor/lib/vendor.qti.hardware.iop@1.0.so|7244776c0f9ef0e01b267b7ef92e8db5912ad89a
+vendor/lib/vendor.qti.hardware.iop@2.0.so|ec767e11249f7f86d66f232676e6b2d5382979e4
+vendor/lib64/libqti-iopd-client.so|7ab6e2a9a26197167671d4f9e3631b67da44cbc4
+vendor/lib64/vendor.qti.hardware.iop@1.0.so|ab7e9d16481a52a919cd7484eed480913ce29e66
+vendor/lib64/vendor.qti.hardware.iop@2.0.so|a99da96aa7abf8b9a4cb950113d7fe4ccbe4ff6c
 
 # IPA Firmware
 vendor/firmware/ipa_fws.b00
@@ -955,9 +955,9 @@ vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
-# IRQ balance - from RUI2
-vendor/bin/msm_irqbalance
-vendor/etc/msm_irqbalance.conf
+# IRQ balance - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
+vendor/bin/msm_irqbalance|c0910fb319bb8287f176f26078241299455baad0
+vendor/etc/msm_irqbalance.conf|9ba814b99a6eb3a31f618a2f8be32d58bf6f1a75
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
