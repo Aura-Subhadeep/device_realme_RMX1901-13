@@ -67,8 +67,6 @@ public class RealmeParts extends PreferenceFragment implements
     private Preference mGesturesPref;
     private VibratorStrengthPreference mVibratorStrength;
 
-    public static final String KEY_PERFORMANCE = "perf_tuner";
-
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
     public static final String KEY_SRGB_SWITCH = "srgb";
     public static final String KEY_HBM_SWITCH = "hbm";

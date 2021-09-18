@@ -88,16 +88,6 @@
         <service android:name=".doze.DozeService"
                  android:permission="RealmeDozeService">
         </service>
-        <service
-            android:name="org.aospextended.device.PerfTileService"
-            android:icon="@drawable/ic_perf"
-            android:label="@string/performance_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
         <!-- Quick Settings Tiles -->
         <service
             android:name="org.aospextended.device.DCModeTileService"

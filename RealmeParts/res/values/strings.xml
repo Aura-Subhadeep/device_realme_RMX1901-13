@@ -176,20 +176,6 @@
     <string name="raise_to_wake_gesture_title">Raise to wake</string>
     <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
 
-    <!-- Performance Profiles -->
-    <string name="performance_profile_title">Performance</string>
-    <string name="performance_title">Performance Profiles</string>
-    <string name="performance_summary">Performance tuning</string>
-    <string name="performance_dialogTitle">Choose your performance profile</string>
-
-    <!-- Values for performance presets -->
-    <string name="performance_extreme">Extreme</string>
-    <string name="performance_battery">Battery</string>
-    <string name="performance_balance">Balanced</string>
-
-    <string name="perf_desc_title">Performance Modes</string>
-    <string name="perf_mode_info">Make of use of the qs tile to change the performance modes between Battery/Balanced/Extreme. These modes are tweaked based on cpu input boost. No thermal modifications are done.</string>
-
     <string name="display_title">Display</string>
     <string name="misc_title">Misc settings</string>
 

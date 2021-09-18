@@ -19,22 +19,3 @@ allow system_app sysfs_zram:file r_file_perms;
 # Allow system apps to access sysfs_motor
 allow system_app sysfs_motor:dir search;
 allow system_app sysfs_motor:file { getattr open read write };
-
-#Realmeparts
-allow system_app {
-    sysfs_devices_system_cpu
-    sysfs_biggovernor
-    sysfs_littlegovernor
-    sysfs_inpidlefreq
-    sysfs_inplpfreq
-    sysfs_inphpfreq
-    sysfs_inplpmaxfreq
-    sysfs_inphpmaxfreq
-    sysfs_inplprmfreq
-    sysfs_inphprmfreq
-    sysfs_inpboostms
-}:file rw_file_perms;
-allow system_app sysfs_kgsl:lnk_file { getattr open read write };
-allow system_app sysfs_cpu_boost:dir search;
-allow system_app sysfs_cpu_boost:file rw_file_perms;
-allow system_app sysfs_kgsl:file rw_file_perms;

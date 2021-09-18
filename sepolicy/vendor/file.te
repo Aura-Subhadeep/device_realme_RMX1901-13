@@ -32,16 +32,3 @@ type sysfs_iio, sysfs_type, fs_type;
 type sysfs_restart, sysfs_type, fs_type;
 
 type vulkan_hal, file_type;
-
-# Perf control
-type sysfs_biggovernor, sysfs_type, fs_type;
-type sysfs_littlegovernor, sysfs_type, fs_type;
-type sysfs_aboost, sysfs_type, fs_type;
-type sysfs_inpidlefreq, sysfs_type, fs_type;
-type sysfs_inplpfreq, sysfs_type, fs_type;
-type sysfs_inphpfreq, sysfs_type, fs_type;
-type sysfs_inplpmaxfreq, sysfs_type, fs_type;
-type sysfs_inphpmaxfreq, sysfs_type, fs_type;
-type sysfs_inplprmfreq, sysfs_type, fs_type;
-type sysfs_inphprmfreq, sysfs_type, fs_type;
-type sysfs_inpboostms, sysfs_type, fs_type;

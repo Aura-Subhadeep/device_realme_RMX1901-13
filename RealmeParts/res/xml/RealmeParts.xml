@@ -74,11 +74,4 @@
             android:title="@string/otg_mode_title" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="perf_desc"
-        android:title="@string/perf_desc_title">
-        <org.aospextended.device.widget.WallOfTextPreference
-            android:icon="@drawable/ic_info"
-            android:summary="@string/perf_mode_info" />
-    </PreferenceCategory>
 </PreferenceScreen>
