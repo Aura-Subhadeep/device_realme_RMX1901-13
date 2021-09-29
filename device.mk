@@ -418,9 +418,9 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.realme_sdm710
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.qti
+# # Thermal
+# PRODUCT_PACKAGES += \
+#     android.hardware.thermal@2.0-service.qti
 
 # USB
 PRODUCT_PACKAGES += \

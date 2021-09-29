@@ -1137,14 +1137,14 @@ vendor/lib/hw/vendor.qti.esepowermanager@1.1-impl.so|7f5adb335d12659d76fa13318b6
 vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so|17f648402c874e4f981caadd91438a525089e35d
 
 # Neural networks - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
-vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti
-vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc
--vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml
-vendor/lib64/libhexagon_nn_stub.so
-vendor/lib64/unnhal-acc-adreno.so
-vendor/lib64/unnhal-acc-common.so
-vendor/lib64/unnhal-acc-hvx.so
-vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
+vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti|17cd0fea4665fffee2e7c8d0c1460d3ee0b1d7c3
+vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc|4b7f2c5f914f3eef38f19936c0a06efc09b5b28c
+-vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-qti.xml|ac07e83ba7c2a87a2f216f04ec84df4539ea8507
+vendor/lib64/libhexagon_nn_stub.so|6173fdbc220aaee6fb241c6af4fe11edae7eb9c8
+vendor/lib64/unnhal-acc-adreno.so|458beaef2457da1c703189f68bec6aabe4297bc0
+vendor/lib64/unnhal-acc-common.so|72ca3f61c374ad7f5cad81f46ec3532ba520f3bb
+vendor/lib64/unnhal-acc-hvx.so|758dc1d430d7823fcdda2a81844016d75c4b11a1
+vendor/lib/rfsa/adsp/libhexagon_nn_skel.so|f258b2402cdb327e79b225fa67119c4699df6c3a
 
 # Oppo Camera AlgoProcessService
 vendor/bin/hw/vendor.oppo.hardware.camera.oppoAlgoProcessService@1.0-service
@@ -1483,9 +1483,14 @@ vendor/firmware/tp/18041/FW_S3706_SAMSUNG_FAE.img
 vendor/firmware/tp/18041/LIMIT_S3706_SAMSUNG.img
 
 # Thermal - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
+vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.qti.xml|4569dd40c5f5d5c9183a7e5734a78420bbaa5761
+vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
+vendor/etc/init/init_thermal-engine.rc|f0d14aa4734b2e8afd61a4eed73238187b268f48
+vendor/etc/init/android.hardware.thermal@2.0-service.qti.rc|b889bf05cd69af94615edc9d3e6060fbcae6817c
 vendor/bin/thermal-engine|4939d0127123d988ef4ec2c3eab201541dfe738a
-vendor/lib64/libthermalclient.so|d042cc537de4950837a5b928f6283fb238a9c59c
+vendor/bin/hw/android.hardware.thermal@2.0-service.qti|b22e69e278a0603770ebe7091f91aef4fb41e67e
 vendor/lib/libthermalclient.so|96dd47b988620b785d5450fe9fcbda90d6959270
+vendor/lib64/libthermalclient.so|d042cc537de4950837a5b928f6283fb238a9c59c
 
 # Time Services - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
 -vendor/app/TimeService/TimeService.apk|8f6b0d6741a0113d3d36f7d51a172027c257efea
