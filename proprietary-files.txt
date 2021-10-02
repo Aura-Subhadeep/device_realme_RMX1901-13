@@ -975,14 +975,6 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.1.so|5d71371d3eb10481f95a018481dfb62a592
 vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so|0cc321ecc4d68f4951bfc3c47e6d64af55d72bd6
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|ae519b1c906e60b66e885922e620f456548f14dd
 
-# IO prefetcher - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
-vendor/lib/libqti-iopd-client.so|dd4029d3ee0a1396431cb246c6af4fbcabd01802
-vendor/lib/vendor.qti.hardware.iop@1.0.so|7244776c0f9ef0e01b267b7ef92e8db5912ad89a
-vendor/lib/vendor.qti.hardware.iop@2.0.so|ec767e11249f7f86d66f232676e6b2d5382979e4
-vendor/lib64/libqti-iopd-client.so|7ab6e2a9a26197167671d4f9e3631b67da44cbc4
-vendor/lib64/vendor.qti.hardware.iop@1.0.so|ab7e9d16481a52a919cd7484eed480913ce29e66
-vendor/lib64/vendor.qti.hardware.iop@2.0.so|a99da96aa7abf8b9a4cb950113d7fe4ccbe4ff6c
-
 # IPA Firmware
 vendor/firmware/ipa_fws.b00
 vendor/firmware/ipa_fws.b01
@@ -991,10 +983,6 @@ vendor/firmware/ipa_fws.b03
 vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
-
-# IRQ balance - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
-vendor/bin/msm_irqbalance|c0910fb319bb8287f176f26078241299455baad0
-vendor/etc/msm_irqbalance.conf|9ba814b99a6eb3a31f618a2f8be32d58bf6f1a75
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
@@ -1186,23 +1174,64 @@ vendor/lib64/vendor.oppo.hardware.radio.opporadio@1.0.so
 vendor/lib64/vendor.oppo.hardware.hypnus@1.0.so
 
 # Perf - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
-vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|5d30808301c7e90cb70478f6f7e38ac593e8cfdf
-vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc|459b4c23550a56ac545f78c6d391f3d7dd9ba45b
-vendor/etc/perf/commonresourceconfigs.xml|47651621904d0a0ea42b72bc9a0df27f99eaeab6
-vendor/etc/perf/perfboostsconfig.xml|c783872e25a855d224f5052988e61c58d554db8b
-vendor/etc/perf/perfconfigstore.xml|cdf858be0dbddc263f5e6f7b881d8d0cf84057b6
-vendor/etc/perf/targetconfig.xml|788ced0689fe95a42e881ea86f3aefc0b4b64042
-vendor/etc/perf/targetresourceconfigs.xml|a9c91a3b0ad715cae8c7ea78d5d47dc7fd7c22f9
-vendor/lib64/libperfconfig.so|077b47e0a5562ecfb0c7274833e8c4e4c9455690
-vendor/lib64/libperfgluelayer.so|f0c16ae2eba0bf355e5ffd194f945f4924cf7d46
-vendor/lib64/libqti-perfd-client.so|cf1db630be11536a27a0ac66646c0024d78c80f7
-vendor/lib64/libqti-perfd.so|3446c05a2ad52222b339f47d4c6d6b85198e2b2d
-vendor/lib64/libqti-util.so|834cc98315887e57a5f229f9ee1a0d20d0d8f4c3
-vendor/lib/libperfconfig.so|18f3575abe6264f97980b001a4a2c01dfc23870b
-vendor/lib/libperfgluelayer.so|f4b58d4cf1fc2f6ae1fd4e8b0c72d71301cd5895
-vendor/lib/libqti-perfd-client.so|ab656bdee4eabe2db8769b3b029aaf9df4ff940b
-vendor/lib/libqti-perfd.so|dadad79d7d2d92c8e309e7962afecb508bc568c8
-vendor/lib/libqti-util.so|0fc209bb65b08ea39177fa9dd61db9a9bfe6c754
+system_ext/etc/perf/wlc_model.tflite
+system_ext/lib/libqti-perfd-client_system.so
+system_ext/lib/libqti-util_system.so
+system_ext/lib/libqti_performance.so
+system_ext/lib/vendor.qti.hardware.perf@2.0.so
+system_ext/lib/vendor.qti.hardware.perf@2.1.so
+system_ext/lib/vendor.qti.hardware.perf@2.2.so
+system_ext/lib64/libqti-perfd-client_system.so
+system_ext/lib64/libqti-util_system.so
+system_ext/lib64/libqti_performance.so
+system_ext/lib64/vendor.qti.hardware.perf@2.0.so
+system_ext/lib64/vendor.qti.hardware.perf@2.1.so
+system_ext/lib64/vendor.qti.hardware.perf@2.2.so
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
+vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
+vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/perfconfigstore.xml
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/lib/libperfgluelayer.so
+vendor/lib/libperfconfig.so
+vendor/lib/libperfioctl.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-util.so
+vendor/lib/libqti-utils.so
+vendor/lib/vendor.qti.hardware.perf@2.0.so
+vendor/lib/vendor.qti.hardware.perf@2.1.so
+vendor/lib/vendor.qti.hardware.perf@2.2.so
+vendor/lib64/libadaptlaunch.so
+vendor/lib64/liblearningmodule.so
+vendor/lib64/libmeters-ns.so
+vendor/lib64/libmeters.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libperfconfig.so
+vendor/lib64/libperfioctl.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-util.so
+vendor/lib64/libqti-utils.so
+vendor/lib64/vendor.qti.hardware.perf@2.0.so
+vendor/lib64/vendor.qti.hardware.perf@2.1.so
+vendor/lib64/vendor.qti.hardware.perf@2.2.so
+
+# Perf-IOP - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
+system_ext/lib/vendor.qti.hardware.iop@2.0.so
+system_ext/lib64/vendor.qti.hardware.iop@2.0.so
+vendor/lib/libqti-iopd-client.so
+vendor/lib/vendor.qti.hardware.iop@1.0.so
+vendor/lib/vendor.qti.hardware.iop@2.0.so
+vendor/lib64/libqti-iopd-client.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so
+vendor/lib64/vendor.qti.hardware.iop@2.0.so
+
+# Perf-IRQ balance - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
+vendor/bin/msm_irqbalance|c0910fb319bb8287f176f26078241299455baad0
+vendor/etc/msm_irqbalance.conf|9ba814b99a6eb3a31f618a2f8be32d58bf6f1a75
 
 # Peripheral manager - from RUI2 11/RKQ1.201217.002/1619368911282:user/release-keys
 vendor/bin/pm-proxy|832cbe7995de8177a2ef5bdf3f145131dfe828d4
