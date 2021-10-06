@@ -28,7 +28,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MenuInflater;
 import android.app.Fragment;
 import androidx.preference.PreferenceFragment;
@@ -106,8 +105,6 @@ public class RealmeParts extends PreferenceFragment implements
         mVibratorStrength = (VibratorStrengthPreference) findPreference(VibratorStrengthPreference.KEY_VIBSTRENGTH);
         mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
 
-        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
-
         mDCModeSwitch = (TwoStatePreference) findPreference(KEY_DC_SWITCH);
         mDCModeSwitch.setEnabled(DCModeSwitch.isSupported());
         mDCModeSwitch.setChecked(DCModeSwitch.isCurrentlyEnabled(this.getContext()));
@@ -139,16 +136,6 @@ public class RealmeParts extends PreferenceFragment implements
         return super.onPreferenceTreeClick(preference);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-        case android.R.id.home:
-            return true;
-        default:
-            break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {

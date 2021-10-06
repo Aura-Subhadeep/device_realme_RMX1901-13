@@ -110,6 +110,7 @@
     <string name="ambient_display_summary_off">Screen will not wake when you receive notifications</string>
     <string name="ambient_display_always_on_title">Always on</string>
     <string name="ambient_display_always_on_summary">Show time, notification icons, and other info. Increased battery usage.</string>
+    <string name="ambient_enable">Use ambient display</string>
 
     <!-- Tilt sensor -->
     <string name="tilt_sensor_title">Tilt sensor</string>

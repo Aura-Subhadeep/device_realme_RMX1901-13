@@ -1,3 +1,9 @@
+-keepclasseswithmembers class * {
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+
+-keep class ** extends android.support.v14.preference.PreferenceFragment
+
 -keep public class org.aospextended.device.KeyHandler
 
 -keepclassmembers public class org.aospextended.device.KeyHandler {
