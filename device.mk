@@ -17,10 +17,6 @@ $(call inherit-product-if-exists, vendor/realme/RMX1901/RMX1901-vendor.mk)
 # HIDL 
 $(call inherit-product, $(LOCAL_PATH)/RMX1901-hidl.mk)
 
-# VNDK
-PRODUCT_TARGET_VNDK_VERSION := 29
-PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
-
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
@@ -436,6 +432,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
+
+# VNDK-SP
+PRODUCT_PACKAGES += \
+    vndk-sp
 
 # Wallet
 PRODUCT_PACKAGES += \
