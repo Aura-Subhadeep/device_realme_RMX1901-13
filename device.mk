@@ -28,6 +28,7 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
