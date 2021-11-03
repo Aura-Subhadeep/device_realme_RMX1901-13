@@ -2901,6 +2901,9 @@ case "$target" in
       echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
       echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
+      # Remove settings cache, avoids derps after dirty flash
+      rm -rf /data/system/package_cache
+
       # Set Memory parameters
       configure_memory_parameters
 
