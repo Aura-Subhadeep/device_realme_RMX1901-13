@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710"
-#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.realme_sdm710"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710"
+#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710"
 
 #include <hardware/hardware.h>
 #include <hardware/fingerprint.h>
@@ -24,13 +24,34 @@
 #include <unistd.h>
 #include <utils/Log.h>
 #include <thread>
+#include <fstream>
+
+#define FP_PRESS_PATH "/sys/kernel/oppo_display/notify_fppress"
+#define DIMLAYER_PATH "/sys/kernel/oppo_display/dimlayer_hbm"
+#define POWER_STATUS_PATH "/sys/kernel/oppo_display/power_status"
+#define NOTIFY_BLANK_PATH "/sys/kernel/oppo_display/notify_panel_blank"
 
 namespace android {
 namespace hardware {
 namespace biometrics {
 namespace fingerprint {
-namespace V2_1 {
+namespace V2_3 {
 namespace implementation {
+
+template <typename T>
+static void set(const std::string& path, const T& value) {
+    std::ofstream file(path);
+    file << value;
+}
+
+template <typename T>
+static T get(const std::string& path, const T& def) {
+    std::ifstream file(path);
+    T result;
+
+    file >> result;
+    return file.fail() ? def : result;
+}
 
 BiometricsFingerprint::BiometricsFingerprint() {
     for(int i=0; i<10; i++) {
@@ -61,14 +82,27 @@ public:
     Return<void> onAcquired(uint64_t deviceId, vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo acquiredInfo,
         int32_t vendorCode) {
         ALOGE("onAcquired %lu %d", deviceId, vendorCode);
-        if(mClientCallback != nullptr)
-            mClientCallback->onAcquired(deviceId, OppoToAOSPFingerprintAcquiredInfo(acquiredInfo), vendorCode);
+        if(mClientCallback != nullptr){
+          // if ((get(POWER_STATUS_PATH, 0) == 1) || (get(POWER_STATUS_PATH, 0) == 3)) {
+          //     set(NOTIFY_BLANK_PATH, 1);
+          //     mClientCallback->onAcquired(deviceId, android::hardware::biometrics::fingerprint::V2_1::FingerprintAcquiredInfo::ACQUIRED_VENDOR, 22);
+          // } else {
+              mClientCallback->onAcquired(deviceId, OppoToAOSPFingerprintAcquiredInfo(acquiredInfo), vendorCode);
+          //}
+        }
         return Void();
     }
 
     Return<void> onAuthenticated(uint64_t deviceId, uint32_t fingerId, uint32_t groupId,
         const hidl_vec<uint8_t>& token) {
-        ALOGE("onAuthenticated %lu %u %u", deviceId, fingerId, groupId);
+            if (fingerId != 0) {
+              std::thread([]() {
+                std::this_thread::sleep_for(std::chrono::milliseconds(150));
+                ALOGE("Delay");
+                set(DIMLAYER_PATH, 0);
+              }).detach();
+            }
+        ALOGE("udfpsonAuthenticated %lu %u %u", deviceId, fingerId, groupId);
         if(mClientCallback != nullptr)
             mClientCallback->onAuthenticated(deviceId, fingerId, groupId, token);
         return Void();
@@ -76,6 +110,7 @@ public:
 
     Return<void> onError(uint64_t deviceId, vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintError error, int32_t vendorCode) {
         ALOGE("onError %lu %d", deviceId, vendorCode);
+        set(DIMLAYER_PATH, 0);
         if(error == vendor::oppo::hardware::biometrics::fingerprint::V2_1::FingerprintError::ERROR_CANCELED) {
             receivedCancel = true;
         }
@@ -193,6 +228,7 @@ Return<RequestStatus> BiometricsFingerprint::enroll(const hidl_array<uint8_t, 69
 
 Return<RequestStatus> BiometricsFingerprint::postEnroll()  {
     ALOGE("postEnroll");
+    set(DIMLAYER_PATH, 0);
     return OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->postEnroll());
 }
 
@@ -253,8 +289,28 @@ Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId, 
     return OppoToAOSPRequestStatus(mOppoBiometricsFingerprint->authenticate(operationId, gid));
 }
 
+Return<bool> BiometricsFingerprint::isUdfps(uint32_t) {
+    return true;
+}
+
+Return<void> BiometricsFingerprint::onFingerDown(uint32_t, uint32_t, float, float) {
+    ALOGE("onFingerDown");
+    set(FP_PRESS_PATH, 1);
+    return Void();
+}
+
+Return<void> BiometricsFingerprint::onFingerUp() {
+    ALOGE("onFingerUp");
+    set(FP_PRESS_PATH, 0);
+    return Void();
+}
+
+Return<bool> BiometricsFingerprint::isDozeMode() {
+    return (get(POWER_STATUS_PATH, 0) == 1) || (get(POWER_STATUS_PATH, 0) == 3);
+}
+
 } // namespace implementation
-}  // namespace V2_1
+}  // namespace V2_3
 }  // namespace fingerprint
 }  // namespace biometrics
 }  // namespace hardware
