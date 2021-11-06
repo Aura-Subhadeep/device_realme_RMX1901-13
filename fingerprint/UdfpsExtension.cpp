@@ -35,7 +35,7 @@ static T get(const std::string& path, const T& def) {
 }
 
 uint32_t getUdfpsZOrder(uint32_t z, bool touched) {
-    set(DIMLAYER_PATH, 1);
+    // set(DIMLAYER_PATH, 1);
     if (touched)
         return 0x41000033;
     return z;

@@ -57,6 +57,10 @@ on post-fs-data
     mkdir /data/vendor/optical_fingerprint   0770 system system
 
 service vendor.fps_hal.realme_sdm710 /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710
+    interface android.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint default
+    interface android.hardware.biometrics.fingerprint@2.2::IBiometricsFingerprint default
+    interface android.hardware.biometrics.fingerprint@2.3::IBiometricsFingerprint default
+    interface vendor.oppo.hardware.biometrics.fingerprint@2.1::IBiometricsFingerprint default
     class late_start
     user system
     group system input
