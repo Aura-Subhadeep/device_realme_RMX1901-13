@@ -1,6 +1,6 @@
 allow init persist_file:lnk_file read;
 allow init socket_device:sock_file { create setattr unlink };
-allow init sysfs_battery_supply:file setattr; 
+allow init sysfs_battery_supply:file setattr;
 allow init sysfs_oppo_display:file rw_file_perms;
 allow init sysfs_oppo_display:file setattr;
 allow init hwservicemanager:binder transfer;
@@ -17,6 +17,10 @@ allow init platform_app:binder call;
 allow init self:socket create;
 allow init oppo_debug_prop:file { read open getattr setattr };
 allow init oppo_debug_prop:property_service set;
+allow init default_android_hwservice:hwservice_manager { add find };
+allow init hal_drm_hwservice:hwservice_manager { add find };
+allow init hwservicemanager:binder call;
+allow init vendor_file:file { execute execute_no_trans };
 
 # Otg Switch
 allow init sysfs_usb_supply:file setattr;
