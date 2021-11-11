@@ -26,7 +26,7 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # AID/fs configs
