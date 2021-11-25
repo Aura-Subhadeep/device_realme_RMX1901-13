@@ -2901,6 +2901,10 @@ case "$target" in
       echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
       echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
+      echo "0:0 1:0 2:0 3:0 4:0 5:0 6:825000 7:825000" > /sys/module/cpu_boost/parameters/input_boost_freq
+      echo 400 > /sys/module/cpu_boost/parameters/input_boost_ms
+      echo 1 > /sys/module/cpu_boost/parameters/sched_boost_on_input
+
       # Remove settings cache, avoids derps after dirty flash
       rm -rf /data/system/package_cache
 
