@@ -520,4 +520,8 @@
 
     <!-- Pocket Mode Light Sensor -->
     <bool name="config_pocketUseLightSensor">false</bool>
+
+    <!-- Exempt ImsService from privacy (location) indicators -->
+    <string name="config_systemAudioIntelligence" translatable="false">vendor.qti.imsrcs</string>
+
 </resources>
