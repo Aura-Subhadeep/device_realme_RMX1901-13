@@ -1256,14 +1256,14 @@ vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
-# Telephony - from LA.QSSI.11.0.r1-11600-qssi.0
--system_ext/priv-app/ims/ims.apk|6ab68813175286f21c963840449a5433b3ad981c
--system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|175e4412e17b7bbfe75f98d468645ec18c6a33fa
--system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|a32f88ddcc8f9cba18aa5697ee5bd52201e89b13
-system_ext/framework/qti-telephony-common.jar|0d3da7628506d66852de19f296a05f728710c4e3
-system_ext/framework/qcrilhook.jar|f2888f922b8347417dfa86741feb8348795fce6f
+# Telephony - from LA.QSSI.12.0.r1-05100-qssi.0
+system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|c8a2ce9a86e542daf835dc0bfa1a63ed7e412d84
 system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
-system_ext/etc/permissions/telephonyservice.xml|b7831598d3c19c6ce4ef431d1cc44d94c3c35a8d
+system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml|4f0056403f56928b8c75a617ba582f17061f89ae
+system_ext/framework/qcrilhook.jar|f251fd8cf621c66a970597954c257d69b6136eda
+system_ext/framework/qti-telephony-common.jar|2ba72ac401a98fe15d23d58867757a2033d51f67
+-system_ext/priv-app/ims/ims.apk|2ee8394e862775e36711e86ca902e5b0ef3e6e68
+-system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|47ff9a1712950fc9f877691f2712d8aa7fcf3420
 
 # RIL
 -vendor/app/IWlanService/IWlanService.apk
