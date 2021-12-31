@@ -79,6 +79,10 @@ public class DozeService extends Service {
         if (DozeUtils.isRaiseToWakeEnabled(this)) {
             mTiltSensor.disable();
         }
+        if (DozeUtils.isAlwaysOnEnabled(this)){
+            mAmdSensor.disable();
+            mTiltSensor.disable();
+        }
     }
 
     private void onDisplayOff() {
@@ -86,11 +90,15 @@ public class DozeService extends Service {
         if (DozeUtils.isPickUpEnabled(this)) {
             mAmdSensor.enable();
         }
-        if (DozeUtils.isHandwaveGestureEnabled(this) ||
-                DozeUtils.isPocketGestureEnabled(this)) {
+        if ((DozeUtils.isHandwaveGestureEnabled(this) ||
+                DozeUtils.isPocketGestureEnabled(this)) && !DozeUtils.isAlwaysOnEnabled(this)) {
             mProximitySensor.enable();
         }
-        if (DozeUtils.isRaiseToWakeEnabled(this)) {
+        if (DozeUtils.isRaiseToWakeEnabled(this) && !DozeUtils.isAlwaysOnEnabled(this)) {
+            mTiltSensor.enable();
+        }
+        if (DozeUtils.isAlwaysOnEnabled(this)){
+            mAmdSensor.enable();
             mTiltSensor.enable();
         }
     }

@@ -77,8 +77,13 @@ public class TiltSensor implements SensorEventListener {
 
         if (event.values[0] == 0) {
             mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
-            mPowerManager.wakeUp(SystemClock.uptimeMillis(),
+           if (DozeUtils.isAlwaysOnEnabled(mContext)) {
+              DozeUtils.launchDozePulse(mContext);
+           }
+          else{
+              mPowerManager.wakeUp(SystemClock.uptimeMillis(),
                     PowerManager.WAKE_REASON_GESTURE, TAG);
+           }
         }
     }
 
