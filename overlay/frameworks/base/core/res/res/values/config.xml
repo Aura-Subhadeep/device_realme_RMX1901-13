@@ -524,4 +524,7 @@
     <!-- Exempt ImsService from privacy (location) indicators -->
     <string name="config_systemAudioIntelligence" translatable="false">vendor.qti.imsrcs</string>
 
+
+    <string name="config_pocketJudgeVendorProximitySensorName">qti.sensor.proximity_fake</string>
+
 </resources>
