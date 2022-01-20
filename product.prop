@@ -13,5 +13,10 @@ ro.lmk.log_stats=true
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
 
+<<<<<<< HEAD
 # Graphics
 debug.hwui.renderer=skiagl
+=======
+# Hearing Aid Audio Support Using Bluetooth LE
+bluetooth.profile.asha.central=true
+>>>>>>> 30000fd (RMX1921: Added new vendors for Bluetooth config migration)

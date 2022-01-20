@@ -222,10 +222,7 @@
         <item>gprs:4092,8760,11680,4096,8760,11680</item>
         <item>evdo:4094,87380,524288,4096,16384,262144</item>
     </string-array>
-    
-    <!-- Boolean indicating if current platform supports BLE peripheral mode -->
-    <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
-    
+
     <!-- Operating volatage for bluetooth controller. 0 by default-->
      <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
 
@@ -524,11 +521,10 @@
     <!-- Exempt ImsService from privacy (location) indicators -->
     <string name="config_systemAudioIntelligence" translatable="false">vendor.qti.imsrcs</string>
 
-
     <string name="config_pocketJudgeVendorProximitySensorName">qti.sensor.proximity_fake</string>
 
-    <!-- Whether Hearing Aid profile is supported -->
-    <bool name="config_hearing_aid_profile_supported">true</bool>
+    <!-- Shows the required view for Screen Off Udfps -->
+    <bool name="config_supportsScreenOffUdfps">true</bool>
 
     <!-- Flag indicating whether the surface flinger is inefficient
          at performing a blur.  Used by parts of the UI to turn off
