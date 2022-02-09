@@ -95,13 +95,6 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
-# Binder
-PRODUCT_PACKAGES += \
-    libhwbinder \
-    libhwbinder.vendor \
-    libhidltransport \
-    libhidltransport.vendor
-
 # Call recording
 PRODUCT_PACKAGES += \
     com.google.android.apps.dialer.call_recording_audio.features.xml
@@ -228,9 +221,9 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.base@1.0_system \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0_system
+    android.hidl.base@1.0.vendor \
+    libhidltransport.vendor \
+    libhwbinder.vendor
 
 # Input
 PRODUCT_COPY_FILES += \
