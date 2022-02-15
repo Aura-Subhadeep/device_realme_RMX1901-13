@@ -68,4 +68,9 @@
           does not work well, particularly with noisy touchscreens. Note that disabling it may
           increase the rate of unintentional unlocks. -->
     <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+
+    <!-- The battery current divider, some kernel report current value in mA other in µA.
+         Leave 1 if you have mA, put 1000 if you have µA -->
+    <integer name="config_battCurrentDivider" translatable="false">1</integer>
+
 </resources>
