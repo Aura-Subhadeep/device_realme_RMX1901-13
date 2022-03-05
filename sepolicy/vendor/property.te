@@ -14,3 +14,6 @@ type vendor_dolby_loglevel_prop, property_type;
 
 # Thermal
 type vendor_thermal_prop, property_type;
+
+# Dirac
+type dirac_prop, property_type;
