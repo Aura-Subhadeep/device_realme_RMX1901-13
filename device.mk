@@ -16,7 +16,7 @@ $(call inherit-product-if-exists, vendor/realme/RMX1901/RMX1901-vendor.mk)
 
 
 # HIDL 
-$(call inherit-product, $(LOCAL_PATH)/RMX1921-hidl.mk)
+$(call inherit-product, $(LOCAL_PATH)/RMX1901-hidl.mk)
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 29
