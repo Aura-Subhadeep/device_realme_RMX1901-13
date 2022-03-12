@@ -26,7 +26,7 @@ on boot
     chown system system /proc/touchpanel/up_arrow_enable
     chown system system /proc/touchpanel/up_swipe_enable
 
-service touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.RMX1921
+service touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.RMX1901
     class hal
     user system
     group system

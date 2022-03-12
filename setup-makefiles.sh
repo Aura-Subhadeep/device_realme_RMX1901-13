@@ -7,7 +7,7 @@
 
 set -e
 
-DEVICE=RMX1921
+DEVICE=RMX1901
 VENDOR=realme
 
 INITIAL_COPYRIGHT_YEAR=2019
@@ -29,7 +29,7 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$ANDROID_ROOT" true
 
 # Warning headers and guards
-write_headers "RMX1921"
+write_headers "RMX1901"
 
 write_makefiles "$MY_DIR"/proprietary-files.txt
 
