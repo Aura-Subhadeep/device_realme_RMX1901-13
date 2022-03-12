@@ -517,4 +517,7 @@
 
     <!-- Height of the status bar -->
     <dimen name="status_bar_height_portrait">29dp</dimen>
+
+    <!-- Pocket Mode Light Sensor -->
+    <bool name="config_pocketUseLightSensor">false</bool>
 </resources>
