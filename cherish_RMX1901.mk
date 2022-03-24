@@ -33,11 +33,11 @@ PRODUCT_MODEL := Realme X
 PRODUCT_GMS_CLIENTID_BASE := android-oppo
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="raven-user 12 S3B1.220218.004 8242181 release-keys" \
+    PRIVATE_BUILD_DESC="raven-user 12 SP2A.220305.013.A3 8229987 release-keys" \
     PRODUCT_NAME="RMX1901"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := google/raven/raven:12/S3B1.220218.004/8242181:user/release-keys
+BUILD_FINGERPRINT := google/raven/raven:12/SP2A.220305.013.A3/8229987:user/release-keys
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
