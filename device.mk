@@ -336,6 +336,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
 
+# Pixel Wallpapers (2021)
+PRODUCT_PACKAGES += \
+    PixelWallpapers2021
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
