@@ -201,6 +201,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Usb
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    vendor.usb.product_string=Realme X \
     persist.vendor.usb.config.extra=none \
     vendor.usb.dpl.inst.name=dpl \
     vendor.usb.rmnet.func.name=rmnet_bam \
