@@ -568,4 +568,7 @@
          -->
     <dimen name="status_bar_height_landscape">35dp</dimen>
 
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
+
 </resources>
