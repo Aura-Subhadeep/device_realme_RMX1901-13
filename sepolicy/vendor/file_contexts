@@ -2,6 +2,12 @@
 /mnt/vendor/persist/audio(/.*)?                                                u:object_r:persist_audio_file:s0
 /proc/asound/card0/codecs(/.*)?                                                u:object_r:proc_audio_file:s0
 
+# Data files
+/data/vendor/dolby(/.*)?   u:object_r:vendor_data_file:s0
+
+# Dolby
+/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service                                        u:object_r:hal_dms_default_exec:s0
+
 # dpmd
 /(product|system/product)/bin/dpmd                                   u:object_r:vendor_dpmd_exec:s0
 /(vendor|system/vendor)/lib(64)?/com\.qualcomm\.qti\.dpm\.api@[0-9]+\.[0-9]+\.so    u:object_r:same_process_hal_file:s0
