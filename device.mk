@@ -17,9 +17,6 @@ $(call inherit-product-if-exists, vendor/realme/RMX1901/RMX1901-vendor.mk)
 # HIDL 
 $(call inherit-product, $(LOCAL_PATH)/RMX1901-hidl.mk)
 
-# RealmeDirac
-$(call inherit-product, packages/apps/RealmeDirac/dirac.mk)
-
 # Always preopt extracted APKs to prevent extracting out of the APK
 # for gms modules.
 PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
@@ -54,12 +51,6 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libvolumelistener \
     tinymix
-
-# RealmeDirac
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/dirac/etc/diracmobile.config:$(TARGET_COPY_OUT_VENDOR)/etc/diracmobile.config \
-    $(LOCAL_PATH)/dirac/lib/libDiracAPI_SHARED.so:$(TARGET_COPY_OUT_VENDOR)/lib/libDiracAPI_SHARED.so \
-    $(LOCAL_PATH)/dirac/lib/soundfx/libdirac.so:$(TARGET_COPY_OUT_VENDOR)/lib/soundfx/libdirac.so
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_configs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_configs.xml \
