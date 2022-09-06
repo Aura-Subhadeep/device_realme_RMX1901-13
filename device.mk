@@ -26,7 +26,7 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 
 # Enable updating of APEXes
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+PRODUCT_COMPRESSED_APEX := false
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
@@ -405,7 +405,7 @@ PRODUCT_PACKAGES += \
     init.oppo.vendor.motor.rc \
     apex_metadata.rc \
     init.RealmeParts.rc \
-		vendor.qti.hardware.iop@2.0-service-disable.rc
+    vendor.qti.hardware.iop@2.0-service-disable.rc
 
 # Recovery
 PRODUCT_PACKAGES += \
@@ -457,9 +457,9 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.realme_sdm710
 
-# # Thermal
-# PRODUCT_PACKAGES += \
-#     android.hardware.thermal@2.0-service.qti
+# Thermal
+#PRODUCT_PACKAGES += \
+#   android.hardware.thermal@2.0-service.qti
 
 # USB
 PRODUCT_PACKAGES += \
