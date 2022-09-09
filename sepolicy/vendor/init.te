@@ -18,6 +18,9 @@ allow init self:socket create;
 allow init oppo_debug_prop:file { read open getattr setattr };
 allow init oppo_debug_prop:property_service set;
 allow init hwservicemanager:binder call;
+allow init hwservicemanager:binder { call transfer };
+allow init proc:file { write };
+allow init iorapd_data_file:file getattr;
 
 # Otg Switch
 allow init sysfs_usb_supply:file setattr;
