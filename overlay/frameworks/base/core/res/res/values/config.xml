@@ -680,7 +680,7 @@
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">4</integer>
+    <integer name="config_screenBrightnessDim">1</integer>
 
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently in hardware. -->
     <bool name="config_setColorTransformAccelerated">true</bool>
