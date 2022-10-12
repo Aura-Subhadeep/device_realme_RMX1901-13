@@ -197,5 +197,8 @@ persist.device_config.runtime_native.usap_pool_enabled=true
 ro.product.model=RMX1901
 
 # Battery Saving
-ro.ril.disable.power.collapse=1
+ro.vendor.use_data_netmgrd=true
+ro.vold.umsdirtyratio=20
+ro.ril.disable.power.collapse=0
+power.saving.mode=1
 pm.sleep_mode=1
