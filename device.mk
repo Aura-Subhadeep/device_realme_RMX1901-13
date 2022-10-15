@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -24,18 +24,6 @@ PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
 # Enable updating of APEXes
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 PRODUCT_COMPRESSED_APEX := false
-
-# AID/fs configs
-PRODUCT_PACKAGES += \
-    fs_config_files
-
-# Bluetooth
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio-impl \
-    audio.bluetooth.default \
-    libbthost_if \
-    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -90,6 +78,19 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+
+# AID/fs configs
+PRODUCT_PACKAGES += \
+    fs_config_files
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1.vendor \
+    android.hardware.bluetooth.audio-impl \
+    audio.bluetooth.default \
+    libbthost_if \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
 
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 2340
@@ -161,23 +162,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI
 
-# DRM
-PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4-service.clearkey
-
 # Doze
 PRODUCT_PACKAGES += \
     RealmeParts
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4-service.clearkey
 
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710 \
     vendor.oppo.hardware.biometrics.fingerprint@2.1
-
-# IPA
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml
 
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
@@ -229,6 +225,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
 
+# IPA
+PRODUCT_PACKAGES += \
+    ipacm \
+    IPACM_cfg.xml
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.realme_sdm710
@@ -264,10 +265,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
-# Native libraries whitelist
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage \
@@ -296,10 +293,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.perf.scroll_opt=true
-
-# Muzix
-PRODUCT_PACKAGES += \
-    Muzix
 
 # Perfd (dummy)
 PRODUCT_PACKAGES += \
@@ -360,6 +353,10 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat
+
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # QTI
 PRODUCT_PACKAGES += \
@@ -447,10 +444,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.realme_sdm710
 
 # Thermal
 #PRODUCT_PACKAGES += \

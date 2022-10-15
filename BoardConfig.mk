@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -32,29 +32,6 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a9
 
 TARGET_USES_64_BIT_BINDER := true
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sdm710
-TARGET_NO_BOOTLOADER := true
-
-# Kernel
-BOARD_BOOT_HEADER_VERSION := 1
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 swiotlb=1 loop.max_part=7 kpti=off
-BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_KERNEL_PAGESIZE := 4096
-TARGET_KERNEL_SOURCE := kernel/realme/RMX1901
-TARGET_KERNEL_CONFIG := RMX1901_defconfig
-TARGET_KERNEL_CLANG_VERSION := proton
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton
-TARGET_KERNEL_ADDITIONAL_FLAGS += \
-    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-
-# Platform
-TARGET_BOARD_PLATFORM := sdm710
-
 # Assertion
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := RMX1901,RMX1901CN
@@ -71,17 +48,15 @@ TARGET_PROVIDES_AUDIO_EXTNS := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 #TARGET_USE_QTI_BT_STACK := true
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := sdm710
+TARGET_NO_BOOTLOADER := true
+
 # Display
 TARGET_HAS_HDR_DISPLAY := true
 TARGET_HAS_WIDE_COLOR_DISPLAY := true
 TARGET_USES_VULKAN := true
 TARGET_SCREEN_DENSITY := 415
-
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
-
-# FOD
-TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.RMX1901
 
 # Graphics
 TARGET_USES_GRALLOC1 := true
@@ -96,6 +71,28 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
+# FOD
+TARGET_SURFACEFLINGER_UDFPS_LIB := //$(DEVICE_PATH):libudfps_extension.RMX1901
+
+# Kernel
+BOARD_BOOT_HEADER_VERSION := 1
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 swiotlb=1 loop.max_part=7 kpti=off
+BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_KERNEL_PAGESIZE := 4096
+TARGET_KERNEL_SOURCE := kernel/realme/RMX1901
+TARGET_KERNEL_CONFIG := RMX1901_defconfig
+TARGET_KERNEL_CLANG_VERSION := proton
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton
+TARGET_KERNEL_ADDITIONAL_FLAGS += \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 
 # LMKD
 TARGET_LMKD_STATS_LOG := true
@@ -122,6 +119,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
 
 TARGET_COPY_OUT_VENDOR := vendor
+
+# Platform
+TARGET_BOARD_PLATFORM := sdm710
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
