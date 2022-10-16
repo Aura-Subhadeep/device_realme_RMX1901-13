@@ -65,10 +65,12 @@ public:
     Return<bool> isUdfps(uint32_t sensorId) override;
     Return<void> onFingerDown(uint32_t x, uint32_t y, float minor, float major) override;
     Return<void> onFingerUp() override;
-    Return<void> onShowUdfpsOverlay() override;
-    Return<void> onHideUdfpsOverlay() override;
+
+    // our own functions
+    void setFingerprintScreenState(const bool on);
 
 private:
+    bool isEnrolling;
     sp<vendor::oppo::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint> mOppoBiometricsFingerprint;
     sp<OppoClientCallback> mOppoClientCallback;
     static Return<RequestStatus> OppoToAOSPRequestStatus(vendor::oppo::hardware::biometrics::fingerprint::V2_1::RequestStatus req);
