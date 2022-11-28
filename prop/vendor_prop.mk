@@ -230,3 +230,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     vendor.usb.use_gadget_hal=0 \
     vendor.usb.diag.func.name=diag \
     vendor.usb.qdss.inst.name=qdss 
+    
+# Zygote
+zygote.critical_window.minute=10
