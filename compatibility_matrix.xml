@@ -90,20 +90,12 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <name>Isigma_miracast</name>
             <instance>sigmahal</instance>
         </interface>
-    </hal>
+   </hal>
      <hal format="hidl" optional="true">
         <name>vendor.google.google_battery</name>
         <version>1.1</version>
         <interface>
             <name>IGoogleBattery</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.dolby.hardware.dms</name>
-        <version>1.0</version>
-        <interface>
-            <name>IDms</name>
             <instance>default</instance>
         </interface>
     </hal>
