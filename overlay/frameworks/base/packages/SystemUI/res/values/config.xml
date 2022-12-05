@@ -78,10 +78,6 @@
     <integer name="config_battCurrentDivider" translatable="false">1</integer>
 
     <!-- Override value to use for proximity sensor.  -->
-    <string name="proximity_sensor_type" translatable="false">android.sensor.proximity</string>
-
-    <!-- If using proximity_sensor_type, specifies a threshold value to distinguish near and
-         far break points. A sensor value less than this is considered "near". -->
-    <item name="proximity_sensor_threshold" translatable="false" format="float" type="dimen">4.99</item>
+    <string name="proximity_sensor_type" translatable="false">qti.sensor.proximity_fake</string>
 
 </resources>
