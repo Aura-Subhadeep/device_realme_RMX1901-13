@@ -92,6 +92,9 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1 \
     ro.sf.blurs_are_expensive=1
 
+# Cached app compaction
+persist.device_config.activity_manager.use_compaction=true
+
 # Camera
 PRODUCT_PRODUCT_PROPERTIES += \
    persist.camera.HAL3.enabled=1 \
