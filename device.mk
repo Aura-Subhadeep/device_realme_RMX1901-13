@@ -14,6 +14,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/realme/RMX1901/RMX1901-vendor.mk)
 
+# Device Specific Settings
+$(call inherit-product-if-exists, packages/apps/PocketMode/pocket_mode.mk)
+
 # HIDL
 $(call inherit-product, $(LOCAL_PATH)/RMX1901-hidl.mk)
 
