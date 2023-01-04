@@ -15,17 +15,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/gestures">
-
-        <PreferenceScreen
-                android:key="screen_gestures"
-                android:icon="@drawable/ic_settings_gestures"
-                android:summary="@string/gestures_dashboard_summary"
-                android:title="@string/screen_off_gestures" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:title="@string/vibrator_intensity_control">
 
         <org.aospextended.device.vibration.VibratorStrengthPreference

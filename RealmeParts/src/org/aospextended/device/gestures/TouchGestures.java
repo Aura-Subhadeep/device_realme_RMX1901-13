@@ -48,11 +48,14 @@ public class TouchGestures extends PreferenceFragment implements
         ShortcutPickerHelper.OnPickListener {
 
     private static String GESTURE_PATH = "/proc/touchpanel/gesture_enable";
+    private static String DT2W_PATH = "/proc/touchpanel/double_tap_enable";
 
     private static final String SETTINGS_METADATA_NAME = "com.android.settings";
 
+    public static final String PREF_DT2W_ENABLE = "enable_dt2w";
     public static final String PREF_GESTURE_ENABLE = "enable_gestures";
 
+    public static final String PREF_GESTURE_DOUBLE_TAP = "gesture_double_tap";
     public static final String PREF_GESTURE_W = "gesture_w";
     public static final String PREF_GESTURE_M = "gesture_m";
     public static final String PREF_GESTURE_CIRCLE = "gesture_circle";
@@ -73,6 +76,7 @@ public class TouchGestures extends PreferenceFragment implements
 
     private static final int MENU_RESET = Menu.FIRST;
 
+    private Preference mGestureDoubleTap;
     private Preference mGestureW;
     private Preference mGestureM;
     private Preference mGestureCircle;
@@ -86,6 +90,7 @@ public class TouchGestures extends PreferenceFragment implements
     private Preference mGestureSwipeLeft;
     private Preference mGestureSwipeRight;
 
+    private SwitchPreference mEnableDt2w;
     private SwitchPreference mEnableGestures;
     private SwitchPreference mHapticFeedback;
 
@@ -119,6 +124,12 @@ public class TouchGestures extends PreferenceFragment implements
             }
     }
 
+    public static void enableDt2w(boolean enable) {
+            if (Utils.fileExists(GESTURE_PATH)) {
+                Utils.writeLine(DT2W_PATH, enable ? "1" : "0");
+            }
+    }
+
     private PreferenceScreen initPrefs() {
         PreferenceScreen prefs = getPreferenceScreen();
         if (prefs != null) {
@@ -129,12 +140,11 @@ public class TouchGestures extends PreferenceFragment implements
 
         prefs = getPreferenceScreen();
 
+        mEnableDt2w = (SwitchPreference) prefs.findPreference(PREF_DT2W_ENABLE);
+
         mEnableGestures = (SwitchPreference) prefs.findPreference(PREF_GESTURE_ENABLE);
 
-        mHapticFeedback = (SwitchPreference) findPreference(KEY_GESTURE_HAPTIC_FEEDBACK);
-        mHapticFeedback.setChecked(mPrefs.getInt(Utils.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0);
-        mHapticFeedback.setOnPreferenceChangeListener(this);
-
+        mGestureDoubleTap = (Preference) prefs.findPreference(PREF_GESTURE_DOUBLE_TAP);
         mGestureW = (Preference) prefs.findPreference(PREF_GESTURE_W);
         mGestureM = (Preference) prefs.findPreference(PREF_GESTURE_M);
         mGestureCircle = (Preference) prefs.findPreference(PREF_GESTURE_CIRCLE);
@@ -148,6 +158,8 @@ public class TouchGestures extends PreferenceFragment implements
         mGestureSwipeLeft = (Preference) prefs.findPreference(PREF_GESTURE_SWIPE_LEFT);
         mGestureSwipeRight = (Preference) prefs.findPreference(PREF_GESTURE_SWIPE_RIGHT);
 
+        setPref(mGestureDoubleTap, mPrefs.getString(PREF_GESTURE_DOUBLE_TAP,
+                Action.ACTION_WAKE_DEVICE));
         setPref(mGestureW, mPrefs.getString(PREF_GESTURE_W,
                 Action.ACTION_CAMERA));
         setPref(mGestureM, mPrefs.getString(PREF_GESTURE_M,
@@ -173,10 +185,10 @@ public class TouchGestures extends PreferenceFragment implements
         setPref(mGestureSwipeRight, mPrefs.getString(PREF_GESTURE_SWIPE_RIGHT,
                 Action.ACTION_MEDIA_NEXT));
 
-        boolean enableGestures =
-                mPrefs.getBoolean(PREF_GESTURE_ENABLE, false);
-        mEnableGestures.setChecked(enableGestures);
-        mEnableGestures.setOnPreferenceChangeListener(this);
+        boolean enableDt2w =
+                mPrefs.getBoolean(PREF_DT2W_ENABLE, true);
+        mEnableDt2w.setChecked(enableDt2w);
+        mEnableDt2w.setOnPreferenceChangeListener(this);
 
         return prefs;
     }
@@ -207,7 +219,10 @@ public class TouchGestures extends PreferenceFragment implements
     public boolean onPreferenceClick(Preference preference) {
         String key = null;
         int title = 0;
-	      if (preference == mGestureW) {
+	    if (preference == mGestureDoubleTap) {
+            key = PREF_GESTURE_DOUBLE_TAP;
+            title = R.string.gesture_double_tap_title;
+        } else if (preference == mGestureW) {
             key = PREF_GESTURE_W;
             title = R.string.gesture_w_title;
         } else if (preference == mGestureM) {
@@ -253,6 +268,12 @@ public class TouchGestures extends PreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mEnableDt2w) {
+            mPrefs.edit()
+                    .putBoolean(PREF_DT2W_ENABLE, (Boolean) newValue).commit();
+            enableDt2w((Boolean) newValue);
+            return true;
+        }
         if (preference == mEnableGestures) {
             mPrefs.edit()
                     .putBoolean(PREF_GESTURE_ENABLE, (Boolean) newValue).commit();
@@ -260,11 +281,6 @@ public class TouchGestures extends PreferenceFragment implements
             return true;
         }
         final String key = preference.getKey();
-        if (KEY_GESTURE_HAPTIC_FEEDBACK.equals(key)) {
-                final boolean value = (boolean) newValue;
-                mPrefs.edit().putInt(Utils.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, value ? 1 : 0).commit();
-                return true;
-        }
         return false;
     }
 
@@ -273,8 +289,12 @@ public class TouchGestures extends PreferenceFragment implements
         SharedPreferences.Editor editor = mPrefs.edit();
 
         mPrefs.edit()
-                .putBoolean(PREF_GESTURE_ENABLE, false).commit();
+                .putBoolean(PREF_DT2W_ENABLE, true).commit();
+        mPrefs.edit()
+                .putBoolean(PREF_GESTURE_ENABLE, true).commit();
 
+        editor.putString(PREF_GESTURE_DOUBLE_TAP,
+                Action.ACTION_WAKE_DEVICE).commit();
         editor.putString(PREF_GESTURE_W,
                 Action.ACTION_CAMERA).commit();
         editor.putString(PREF_GESTURE_M,
@@ -301,6 +321,7 @@ public class TouchGestures extends PreferenceFragment implements
                 Action.ACTION_MEDIA_NEXT).commit();
         mHapticFeedback.setChecked(true);
         editor.commit();
+        enableDt2w(true);
         enableGestures(true);
         initPrefs();
     }

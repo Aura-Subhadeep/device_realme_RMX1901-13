@@ -90,16 +90,6 @@ public class RealmeParts extends PreferenceFragment implements
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getContext());
         setPreferencesFromResource(R.xml.RealmeParts, rootKey);
-
-        mGesturesPref = findPreference("screen_gestures");
-        mGesturesPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                Intent intent = new Intent(getContext(), TouchGesturesActivity.class);
-                startActivity(intent);
-                return true;
-            }
-        });
         mDozePref = findPreference("doze");
         mDozePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             @Override

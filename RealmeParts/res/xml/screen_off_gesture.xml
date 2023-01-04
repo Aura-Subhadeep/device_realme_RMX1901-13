@@ -19,97 +19,19 @@
     android:title="@string/screen_off_gestures">
 
         <PreferenceCategory
-            android:key="haptic"
-            android:title="@string/haptic_feedback_title" >
+            android:key="dt2w"
+            android:title="@string/dt2w_title" >
 
-            <SwitchPreference
-                android:key="gesture_haptic_feedback"
-                android:persistent="false"
-                android:title="@string/touchscreen_gesture_haptic_feedback"
-                android:summary="@string/touchscreen_gesture_haptic_feedback_summary" />
-        </PreferenceCategory>
-
-        <PreferenceCategory
-            android:key="gestures"
-            android:title="@string/gestures_title" >
-
-            <SwitchPreference
-                android:key="enable_gestures"
-                android:title="@string/enable_gestures_title"
-                android:persistent="false"
-                android:summary="@string/enable_gestures_summary" />
-
+        <SwitchPreference
+            android:key="enable_dt2w"
+            android:title="@string/enable_dt2w_title"
+            android:persistent="false"
+            android:summary="@string/enable_dt2w_summary" />
             <Preference
-                android:key="gesture_w"
-                android:title="@string/gesture_w_title"
+                android:key="gesture_double_tap"
+                android:title="@string/gesture_double_tap_title"
                 android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_m"
-                android:title="@string/gesture_m_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_circle"
-                android:title="@string/gesture_circle_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_two_swipe"
-                android:title="@string/gesture_two_swipe_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_up_arrow"
-                android:title="@string/gesture_up_arrow_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_down_arrow"
-                android:title="@string/gesture_down_arrow_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_left_arrow"
-                android:title="@string/gesture_left_arrow_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_right_arrow"
-                android:title="@string/gesture_right_arrow_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_swipe_up"
-                android:title="@string/gesture_swipe_up_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_swipe_down"
-                android:title="@string/gesture_swipe_down_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_swipe_left"
-                android:title="@string/gesture_swipe_left_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
-
-            <Preference
-                android:key="gesture_swipe_right"
-                android:title="@string/gesture_swipe_right_title"
-                android:persistent="false"
-                android:dependency="enable_gestures" />
+                android:dependency="enable_dt2w" />
         </PreferenceCategory>
 
 </PreferenceScreen>
