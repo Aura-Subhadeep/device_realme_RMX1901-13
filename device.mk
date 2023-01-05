@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -34,12 +34,29 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.soundtrigger@2.3-impl \
+    audio.primary.sdm710 \
     audio.r_submix.default \
     audio.usb.default \
+    libaudio-resampler \
+    libaudioroute \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libvolumelistener \
+    libaudioparsers \
+    libcirrusspkrprot \
+    libspkrprot \
+    libhdmiedid \
+    liba2dpoffload \
+    libexthwplugin \
+    libhfp \
+    libbatterylistener \
+    libsndmonitor \
+    libhdmipassthru \
     tinymix
 
 PRODUCT_COPY_FILES += \
@@ -86,6 +103,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService-Soong \
+    com.dsi.ant@1.0.vendor
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.1.vendor \
@@ -93,7 +115,8 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     libbthost_if \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 2340
@@ -107,6 +130,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
+    libcamera2ndk_vendor \
+    libdng_sdk.vendor \
     libstdc++.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
     libgui_vendor
@@ -142,6 +167,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libdisplayconfig.vendor \
     libdisplayconfig.qti \
+    libdisplayconfig.system.qti \
     libqdMetaData \
     libqdMetaData.system \
     vendor.display.config@1.0.vendor \
@@ -154,9 +180,10 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.7.vendor \
     vendor.display.config@1.8.vendor \
     vendor.display.config@1.9.vendor \
-    vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor \
+    vendor.display.config@2.0 \
     vendor.qti.hardware.display.allocator@1.0-service \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
 
@@ -180,6 +207,7 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.4.vendor \
     android.hardware.drm@1.4-service.clearkey
 
 # Fingerprint
@@ -190,6 +218,15 @@ PRODUCT_PACKAGES += \
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.freeform_window_management.xml
+
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.1.vendor \
+    android.hardware.gnss@2.1.vendor
 
 # Google Photos
 PRODUCT_COPY_FILES += \
@@ -224,6 +261,7 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
     android.hidl.base@1.0.vendor \
     libhidltransport.vendor \
     libhwbinder.vendor
@@ -242,6 +280,10 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.1.vendor
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.realme_sdm710
@@ -251,6 +293,7 @@ PRODUCT_PACKAGES += \
     libminijail \
     libavservices_minijail \
     libavservices_minijail.vendor \
+    libavservices_minijail_vendor \
     libc2dcolorconvert \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -275,6 +318,14 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
+
+# Net
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1.vendor
+
+# Neural networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -353,6 +404,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.power@1.2.vendor \
     android.hardware.power-service-qti \
     android.hardware.power.stats@1.0-service.mock \
     vendor.qti.hardware.perf@2.2.vendor
@@ -366,6 +418,7 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Protobuf
 PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat
 
@@ -388,9 +441,13 @@ PRODUCT_COPY_FILES += \
 # Radio
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
+    android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.1 \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
     libjson \
-    librmnetctl
+    librmnetctl \
+    libxml2
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -435,8 +492,10 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    vendor/qcom/opensource/usb/etc \
     hardware/qcom-caf/sdm845 \
     hardware/google/pixel
+    hardware/nxp
 
 # Speed profile services and wifi-service to reduce RAM and storage.
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
@@ -461,8 +520,8 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 # Thermal
-#PRODUCT_PACKAGES += \
-#   android.hardware.thermal@2.0-service.qti
+PRODUCT_PACKAGES += \
+   android.hardware.thermal@2.0-service.qti
 
 # USB
 PRODUCT_PACKAGES += \
@@ -493,10 +552,11 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
+    libwifi-hal-ctrl \
     libwifi-hal-qcom \
     libwpa_client \
-    WifiOverlay \
-    TetheringConfigOverlay \
+    vendor.qti.hardware.wifi.hostapd@1.2.vendor \
+    vendor.qti.hardware.wifi.supplicant@2.1.vendor \
     wpa_supplicant \
     wpa_supplicant.conf
 

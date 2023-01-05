@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -151,7 +151,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_RMX1901
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
-#SurfaceFlinger
+# SurfaceFlinger
 TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Security patch level
