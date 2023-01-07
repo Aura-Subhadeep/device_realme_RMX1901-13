@@ -84,6 +84,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.bt.enable.splita2dp=true \
     persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
     ro.bluetooth.a2dp_offload.supported=true \
     vendor.qcom.bluetooth.soc=cherokee
 
