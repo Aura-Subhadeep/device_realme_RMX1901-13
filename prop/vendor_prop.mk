@@ -159,6 +159,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.egl=adreno \
     ro.hardware.vulkan=adreno \
     debug.sdm.support_writeback=0
+    ro.config.avoid_gfx_accel=true
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
