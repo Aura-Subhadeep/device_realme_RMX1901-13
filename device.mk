@@ -494,7 +494,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     vendor/qcom/opensource/usb/etc \
     hardware/qcom-caf/sdm845 \
-    hardware/google/pixel
+    hardware/google/pixel \
     hardware/nxp
 
 # Speed profile services and wifi-service to reduce RAM and storage.
@@ -555,6 +555,8 @@ PRODUCT_PACKAGES += \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
     libwpa_client \
+    WifiOverlay \
+    TetheringConfigOverlay \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
     vendor.qti.hardware.wifi.supplicant@2.1.vendor \
     wpa_supplicant \
