@@ -455,3 +455,6 @@ on charger
 #     group system
 #     disabled
 #endif
+
+# Enable suspend to RAM
+    write /sys/power/mem_sleep "deep"
