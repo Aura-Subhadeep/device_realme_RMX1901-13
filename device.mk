@@ -342,23 +342,6 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay/packages/apps/Snap \
     $(LOCAL_PATH)/overlay/frameworks/base/packages/SystemUI
 
-# Perf-Common
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/perf/configs/common,$(TARGET_COPY_OUT_VENDOR)/etc) \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/perf/configs/sdm710,$(TARGET_COPY_OUT_VENDOR)/etc)
-
-PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0 \
-    libpsi.vendor \
-    libtflite \
-    vendor.qti.hardware.servicetracker@1.2.vendor
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.power.pasr.enabled=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.perf.scroll_opt=true
-
 # Perfd (dummy)
 PRODUCT_PACKAGES += \
     libqti-perfd-client
@@ -472,7 +455,6 @@ PRODUCT_PACKAGES += \
     init.oppo.vendor.motor.rc \
     apex_metadata.rc \
     init.RealmeParts.rc \
-    vendor.qti.hardware.iop@2.0-service-disable.rc \
     logcat.rc
 
 # Recovery
