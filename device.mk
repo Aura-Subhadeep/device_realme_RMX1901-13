@@ -186,7 +186,8 @@ PRODUCT_PACKAGES += \
 
 # Dexpreopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
+    SettingsGoogle \
+    SystemUIGoogle
 
 # Doze
 PRODUCT_PACKAGES += \
