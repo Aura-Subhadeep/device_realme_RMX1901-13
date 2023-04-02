@@ -1,6 +1,6 @@
 # Vendor Tree
 echo 'Cloning Vendor tree [1/5]'
-git clone git@github.com:ashim-anwar/vendor_realme_RMX1901-13.git -b 13 vendor/realme/RMX1901
+git clone https://github.com/Aura-Subhadeep/vendor_realme_RMX1901-13 -b 13 vendor/realme/RMX1901
 
 # Kernel Tree
 echo 'Cloning Kernel tree [2/5]'
@@ -17,4 +17,3 @@ git clone --depth=1 https://github.com/kdrag0n/proton-clang.git -b master prebui
 # Inherit Pocket Mode
 echo ' Cloning PocketMode [5/5]'
 git clone git@github.com:ashim-anwar/packages_apps_PocketMode.git -b 13 packages/apps/PocketMode
-
