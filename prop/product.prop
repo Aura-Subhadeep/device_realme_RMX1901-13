@@ -13,9 +13,6 @@ ro.lmk.log_stats=true
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
 
-# Graphics
-debug.hwui.renderer=skiagl
-
 # Set supported Bluetooth profiles to enabled
 bluetooth.device.class_of_device=90,2,12
 bluetooth.profile.asha.central.enabled?=true
