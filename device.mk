@@ -442,6 +442,7 @@ PRODUCT_PACKAGES += \
     init.oppo.vendor.motor.rc \
     apex_metadata.rc \
     init.RealmeParts.rc \
+    init.safailnet.rc \
     logcat.rc
 
 # Recovery
