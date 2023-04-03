@@ -187,6 +187,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
+# Radio
+    persist.vendor.radio.enableadvancedscan=false
+
 # SoC
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.soc.manufacturer=Qualcomm \
