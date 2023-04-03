@@ -90,7 +90,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Blur
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.surface_flinger.supports_background_blur=1 \
-    ro.sf.blurs_are_expensive=1
 
 # Cached app compaction
 persist.device_config.activity_manager.use_compaction=true
