@@ -165,6 +165,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.avoid_gfx_accel=true
     ro.surface_flinger.protected_contents=true
 
+# Phantom process monitoring
+sys.fflag.override.settings_enable_monitor_phantom_procs=false
+
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.volte_avail_ovr=1 \
