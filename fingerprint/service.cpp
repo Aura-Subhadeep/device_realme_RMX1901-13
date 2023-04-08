@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service.x"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
@@ -32,6 +32,7 @@ using android::status_t;
 int main() {
     sp<BiometricsFingerprint> biometricsFingerprint;
     status_t status;
+
     LOG(INFO) << "Fingerprint HAL Adapter service is starting.";
 
     biometricsFingerprint = new BiometricsFingerprint();

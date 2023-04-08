@@ -1,9 +1,8 @@
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710",
+    name: "android.hardware.biometrics.fingerprint@2.3-service.x",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710.rc"],
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.realme_sdm710.xml"],
-    proprietary: true,
+    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.x.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.x.xml"],
     relative_install_path: "hw",
     srcs: [
         "BiometricsFingerprint.cpp",
@@ -24,11 +23,14 @@ cc_binary {
         "android.hardware.biometrics.fingerprint@2.3",
         "vendor.oppo.hardware.biometrics.fingerprint@2.1",
     ],
+    vendor: true,
 }
+
 cc_library_static {
-    name: "libudfps_extension.RMX1901",
+    name: "libudfps_extension.x",
     srcs: ["UdfpsExtension.cpp"],
     include_dirs: [
-        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
+        "frameworks/native/services/surfaceflinger/CompositionEngine/include",
     ],
+
 }

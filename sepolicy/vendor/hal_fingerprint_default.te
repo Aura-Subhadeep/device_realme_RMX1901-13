@@ -3,6 +3,7 @@ binder_call(hal_fingerprint_default, hal_fingerprint_default)
 allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
 allow hal_fingerprint_default goodix_device:chr_file rw_file_perms;
 allow hal_fingerprint_default qdsp_device:chr_file rw_file_perms;
+allow hal_fingerprint_default xdsp_device:chr_file r_file_perms;
 
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
 allow hal_fingerprint_default proc_oppo_fp:file r_file_perms;
@@ -18,6 +19,10 @@ set_prop(hal_fingerprint_default, oppo_debug_prop);
 
 allow hal_fingerprint_default dcs_hwservice:hwservice_manager find;
 allow hal_fingerprint_default sysfs_oppo_display:dir search;
-allow hal_fingerprint_default sysfs_oppo_display:file { read open getattr write };
 dontaudit hal_fingerprint_default default_android_hwservice:hwservice_manager find;
 dontaudit hal_fingerprint_default default_prop:file read;
+allow hal_fingerprint_default oppo_debug_prop:property_service set;
+allow hal_fingerprint_default sysfs_oppo_display:file { read open getattr write };
+allow hal_fingerprint_default system_suspend_hwservice:hwservice_manager find;
+allow hal_fingerprint_default system_suspend_hwservice:binder { call transfer };
+wakelock_use(hal_fingerprint_default)
