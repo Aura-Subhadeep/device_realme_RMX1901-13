@@ -153,8 +153,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.predict_hwc_composition_strategy=0 \
     ro.hardware.egl=adreno \
     ro.hardware.vulkan=adreno \
-    debug.sdm.support_writeback=0
-    ro.config.avoid_gfx_accel=true
+    debug.sdm.support_writeback=0 \
+    ro.config.avoid_gfx_accel=true \
+    ro.hwui.render_ahead=3 \
     ro.surface_flinger.protected_contents=true
 
 # Phantom process monitoring
