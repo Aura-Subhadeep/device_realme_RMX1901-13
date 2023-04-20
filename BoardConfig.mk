@@ -76,9 +76,6 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/hidl/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/hidl/compatibility_matrix.xml
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
-
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_KERNEL_BASE := 0x00000000
