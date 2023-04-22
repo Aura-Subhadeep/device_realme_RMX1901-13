@@ -157,6 +157,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.avoid_gfx_accel=true \
     ro.hwui.render_ahead=3 \
     ro.surface_flinger.protected_contents=true
+    debug.sf.auto_latch_unsignaled=true
 
 # Phantom process monitoring
 sys.fflag.override.settings_enable_monitor_phantom_procs=false
