@@ -158,6 +158,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.render_ahead=3 \
     ro.surface_flinger.protected_contents=true
     debug.sf.auto_latch_unsignaled=true
+    debug.sf.enable_gl_backpressure=1
 
 # Phantom process monitoring
 sys.fflag.override.settings_enable_monitor_phantom_procs=false
