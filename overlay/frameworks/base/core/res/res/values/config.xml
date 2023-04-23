@@ -1204,8 +1204,4 @@
 
     <!-- Allow devices override audio panel location to the left side -->
     <bool name="config_audioPanelOnLeftSide">false</bool>
-
-    <!-- Whether devices suports in-display fingerprint when screen is off -->
-    <bool name="config_supportsScreenOffUdfps">true</bool>
-
 </resources>
