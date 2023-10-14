@@ -91,6 +91,7 @@ persist.sys.sf.native_mode=0
 debug.cpurend.vsync=false
 debug.performance.tuning=1
 debug.hwui.skia_atrace_enabled=false
+debug.sf.latch_unsignaled=0
 
 #hwui properties
 ro.hwui.texture_cache_size=72
