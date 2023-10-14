@@ -18,4 +18,3 @@ allow vendor_init oppo_wlan_prop:file { open read getattr };
 get_prop(vendor_init, persist_debug_prop)
 allow vendor_init proc:file w_file_perms;
 get_prop(vendor_init, oppo_debug_prop)
-allow vendor_init proc_security:file write
